@@ -15,6 +15,7 @@
         $("#second").hide();
         $("#third").hide();
         $("#link").hide();
+        $("#ya").hide();
 
         $("#btn2").click(function(){
           var str = $("#code2").val();
@@ -29,6 +30,14 @@
             $("#third").show();
             $("#link").show();
           }
+        });
+
+        $("#btn4").click(function(){
+          var str = $("#code4").val();
+          if(str = "InterVarsity") {
+            $("#ya").show();
+          }
+
         });
 
       });
@@ -58,7 +67,10 @@
     </div>
 
     <div class="four">
-
+      <h1>FOUR</h1>
+      <input type="text" name="" value="" id="code4">
+      <button type="button" name="button" id="btn4">SUBMIT</button>
+      <h1 id="ya">YOU DID IT! WELCOME!</h1>
     </div>
 
   </body>
