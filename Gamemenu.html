@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hidden Objects game</title>
+        <meta name="viewport" content="width=device=width, initial-scale=1.0">
+        <style>
+            #instr {
+                padding: 10px;
+                color:blue;
+                background: yellow;
+                text-align: center;
+                transition: all 0.2s ease;
+            }
+            #quest {
+                padding: 10px;
+                color:black;
+                background: green;
+                text-align: center;
+                transition: all 0.2s ease;
+            }
+            #quest:hover {
+                background: blue;
+            }
+            #title {
+                text-align: center;
+            }
+
+            #game {
+                max-width: 800px;
+                max-height: 800px;
+                float: left;
+                padding-right: 5px;
+            }
+            #hint {
+                min-width: 100px;
+                min-height: 100px;
+
+            }
+            #left, #right {
+                width: 200px;
+            }
+            .arrows {
+                margin: auto;
+                display: block;
+            }
+            #right {
+                float: right;
+            }
+
+        </style>
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+
+    </head>
+<body>
+    <h1 id="title">Hidden Objects Game!</h1>
+    <img src = "game/pictures/hiddenObjects.jpg" id="game">
+    <h1 id="quest">Start</h1>
+        <img src="" id="left">
+        <img src="" id="right">
+    <h1 id="instr">Instructions</h1>
+    <h1 id="end"></h1>
+    <img src="" id="hint">
+    <h1 id="pass"></h1>
+
+     <script type="text/javascript">
+         $(document).ready(function() {
+             //Variables for hidden objects game
+            var use, score, index, hint, myOne, myTwo, mxOne, mxTwo, remove, first,my,mx,offset;
+             var show = true;
+             var begin = true;
+            //mx and my
+             var mxOne = [
+                 32, 148, 82, 311, 182,120,258,749,669,89,667,557,182,293,600
+             ];
+             var mxTwo = [
+                 72, 179, 94, 334, 220,141,280,762,797,115,716,574,213,340,699
+             ];
+             var myOne = [
+                 156, 154, 154, 533, 491,265,50,400,169,269,341,504,159,313,450
+             ];
+             var myTwo = [
+                 167, 183, 183, 564, 608,317,80,450,187,313,378,531,182,365,521
+             ];
+             //Questions
+                    var question = ["blue feather", "mini cannon", "hour glass", "binoculars", "axe", "bell", "wall clock", "candle","telescope","squirrel","belt", "number 2", "avocado", "cowboy hat", "Japanese fan"];
+            //hints
+            var hints = [
+            "game/pictures/1.jpg",
+            'game/pictures/2.jpg',
+            'game/pictures/3.jpg',
+            'game/pictures/4.jpg',
+            'game/pictures/5.jpg',
+            'game/pictures/6.jpg',
+            'game/pictures/7.jpg',
+            'game/pictures/8.jpg',
+            'game/pictures/9.jpg',
+            'game/pictures/10.jpg',
+            'game/pictures/11.jpg',
+            'game/pictures/12.jpg',
+            'game/pictures/13.jpg',
+            'game/pictures/14.jpg',
+            'game/pictures/15.jpg',
+            ];
+
+             //This shows the instructions
+             $('#instr').click(function() {
+                 if(show== true) {
+                     document.getElementById("instr").innerHTML = "Find all the hidden objects in the picture. You have one hint per object. To use a hint, click anywhere on the screen twice. If you use a hint, you lose 2 points.";
+                     show = false;
+                 }
+                 else {
+                     document.getElementById("instr").innerHTML = "Instructions";
+                     show = true;
+                 }
+             });
+
+             //This gets the game ready and shows the first question
+             $('#quest').click(function() {
+                 if(begin == true) {
+                     //Questions
+                     question = ["blue feather", "mini cannon", "hour glass", "binoculars", "axe"];
+                     index = 0;
+                     score = 100;
+                    use = 0;
+                    remove = true;
+                    document.getElementById("quest").innerHTML = "Find the " + question[index];
+                     begin = false;
+                     document.getElementById("end").innerHTML = "";
+                     document.getElementById("left").src = "game/pictures/Left.png";
+                     document.getElementById("right").src = "game/pictures/right.png";
+                 }
+             });
+
+            //This is for the arrows
+             $('#left').click(function() {
+                 if(index > 0) {
+                     index = index - 1;
+                     document.getElementById("quest").innerHTML = question[index];
+                     remove = true;
+                 }
+
+             });
+
+             $('#right').click(function() {
+                 if(index < 4) {
+                     index = index + 1;
+                     document.getElementById("quest").innerHTML = question[index];
+                     remove = true;
+                 }
+             });
+
+
+             //This is the full game
+             $('#game').click(function(e) {
+                 offset = $(this).offset();
+                 my = (e.pageY - offset.top);
+                 mx = (e.pageX - offset.left);
+                 if (index<=4){
+                     if(myOne[index] <= my && my < myTwo[index] && mxOne[index] < mx && mx < mxTwo[index]) {
+                         question[index] = "You already found this!";
+                         index = index + 1;
+                         document.getElementById("hint").src = "";
+                         if (index<=4){
+                             document.getElementById("quest").innerHTML = "Find the " + question[index];
+                         }
+                         use = 0;
+                         remove = true;
+                     }
+                     else {
+                         use = use + 1;
+                         if (remove == true && use >= 2) {
+                             remove = false;
+                             //show hint here
+                             document.getElementById("hint").src = hints[index];
+                             score = score - 2;
+                             use = 0;
+                         }
+                     }
+                 }
+                 else {
+                     begin = true;
+                     document.getElementById("quest").innerHTML = "Want to play again? Click me!";
+                     document.getElementById("end").innerHTML = "You found everything! You scored: " + score + ". Done playing? click me";
+                     document.getElementById("pass").innerHTML = "InterVarsity";
+                     $('#end').click(function() {
+                         document.write("Thanks for playing!");
+                     });
+                 }
+                 document.getElementById("instr").innerHTML = "score: " + score + " use: " + use;
+             });
+
+         });
+     </script>
+    <!--
+        myOne[index] < my and my <myTwo[index] and mxOne[index] < mx and mx <mxTwo[index]
+        function showInstructions() {
+            document.getElementById("instr").innerHTML = "Find all the hidden objects in the picture. You have one hint per object. To use a hint, click anywhere on the screen twice. If you use a hint, you lose 2 points";
+        }
+
+        $(document).ready(function() {
+              //This only shows the first question and sets up the game
+        function firstQuestion() {
+            index = 0;
+            score = 100;
+            document.getElementById("quest").innerHTML = "Find the " + question[index]
+        }
+
+        }
+
+        //Everthing below here is should be deleted.
+        document.getElementById("winner").innerHTML = "The computer chose " + pc[r] + ". You chose " + user + ". The random number is " + r;
+
+    </script>
+-->
+</body>
+</html>

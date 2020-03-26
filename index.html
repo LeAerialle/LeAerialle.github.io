@@ -1,55 +1,65 @@
-<!doctype html>
-<html class="no-js" lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeAerialle White</title>
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css">
-    <script src="js/app.js"></script>
-      <link rel="stylesheet" href="indexstyle.css">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>TEST</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style media="screen">
+
+    </style>
+
+    <script>
+      $(document).ready(function(){
+        $("#second").hide();
+        $("#third").hide();
+        $("#link").hide();
+
+        $("#btn2").click(function(){
+          var str = $("#code2").val();
+          if(str == "cino") {
+            $("#second").show();
+          }
+        });
+
+        $("#btn3").click(function(){
+          var str = $("#code3").val();
+          if(str = "February") {
+            $("#thrid").show();
+            $("#link").show();
+          }
+        });
+
+      });
+
+    </script>
   </head>
   <body>
-      
-<header class="subnav-hero-section">
-        <h1 class="subnav-hero-headline">LeAerialle White</h1>
-        <ul class="subnav-hero-subnav">
-            <li><a href="images.jpg">ABOUT ME</a></li>
-            <li><a href="reflect.html">Reflections</a></li>
-            <li><a href = "MidSemester.html">Mid Semester Reflection</a></li>
-            <li><a href = "intraspection.html">Introspection</a></li>
-            <li><a href = "endSemester.html">End of Semester Reflection</a></li>
-    </ul>
-</header>
 
+    <div class="one">
+      <h1>Hello! We are looking for advanced individuals. To find these individuals we have made a series of tests. Pass our tests and you will be welcomed into our organization! Your first test is to decode this message:</h1>
+      <p>.-- --- .--     -.-- --- ..-     -.. .. -..     .. - ·-·-·-     ..     -.-. .- -. -     ... .- -.--     - .... .- -     .-- .     .- .-. .     ... ..- .-. .--. .-. .. ... . -.. ·-·-·-     .-- .     .-- . .-. .     - --- .-.. -..     - .... .- -     -.-- --- ..-     .- .-. .     --- -. .     --- ..-.     - .... .     -... .-. .. --. .... - . ... -     -- .. -. -.. ...     .. -.     - .... .     .-- --- .-. .-.. -.. ·-·-·-     .... --- .-- . ...- . .-. --··--     .. -     - .- -.- . ...     -- --- .-. .     - .... .- -.     .--- ..- ... -     -.. . -.-. --- -.. .. -. --.     .-     -- . ... ... .- --. .     - ---     .--. .-. --- ...- .     -.-- --- ..- .-. ... . .-.. ..-. ·-·-·-     --- -.     - ---     - .... .     -. . -..- -     - . ... - ·-·-·-     - .... .     .--. .- ... ... .-- --- .-. -..     .. ...     -.-. .. -. --- ·-·-·-</p>
+    </div>
 
-    <div class="row small-up-1 large-up-2">
-        <div class="column column block">
-            <img src="belton.jpg">
-            <h4>I'm from Belton, SC. It's a town in the Upstate about thirty minutes from Greenville, SC. Only a little over four thousand people live there, so it's a pretty small town. Unless you live the deep country part of town, most of the stores are only a short drive away. The most historical thing about Belton is the Standpipe Festival.</h4>
-        </div>
-        <div class="column column block">
-            <img src="mechel.jpg" style="max-height: 200px">
-            <h4>Some of my interest are origami, playing my guitar, video games, watching The Flash, and watching movies. My favorite movies are comic book movies, but I'll watch almost anything besides horror movies. Although I prefer going to the movies, I also like to watch them at home with friends and family I got into origami and guitar playing when I was younger.</h4>
-        </div>
-        <div class="column column block">
-            <img src="group.jpg">
-            <h4>My mom is a teacher who loves education and now I do to. I love learning new things and college is a great place to do that. I think learning is fun becuase it's challenging.It keeps my mind moving. I aslo decided to go to college for the experience that comes with it. At college you get to meet so many people and try new things. I grew up in a small town surrouned by people I have basically known my whole life, so I wanted to go to college to experience being in a new place surrounded by a new diverse group of people.</h4>
-        </div>
-        <div class="column column block">
-            <img src="images.jpg">
-            <h4>I chose Coastal because of the location, campus, and the community here. I like the size of the campus and how it is designed. Also I like how close it is to the beach. My major is computer science. I chose it because I like learning new programming languages and coding. After I graduate I plan on getting my Masters in Software engineering.My goal is to end my first year here academically successful.</h4>
-            
-        </div>
-</div>
-      
-      
-      
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script>
+    <div class="two">
+      <h1>TEST 2</h1>
+      <input type="text" id="code2">
+      <button type="button" id="btn2">SUBMIT</button>
+      <h3 id="second">During which month do people sleep the least?</h3>
+    </div>
+
+    <div class="three">
+      <h1>TEST 3</h1>
+      <input type="text" name="" value="" id="code3">
+      <button type="button" name="button" id="btn3">SUBMIT</button>
+      <h3 id="third">One must also have an eye for detail. To be able to find anything. Your last test is to find everythingin this room:</h3>
+      <a href="https://www.w3schools.com" target="_blank" id="link">HERE</a>
+    </div>
+
+    <div class="four">
+
+    </div>
+
   </body>
 </html>
