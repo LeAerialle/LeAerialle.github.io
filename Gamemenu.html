@@ -120,7 +120,7 @@
              $('#quest').click(function() {
                  if(begin == true) {
                      //Questions
-                     question = ["blue feather", "mini cannon", "hour glass", "binoculars", "axe"];
+                     question = ["blue feather", "mini cannon", "hour glass", "binoculars", "axe", "bell", "wall clock", "candle","telescope","squirrel","belt", "number 2", "avocado", "cowboy hat", "Japanese fan"];
                      index = 0;
                      score = 100;
                     use = 0;
@@ -144,7 +144,7 @@
              });
 
              $('#right').click(function() {
-                 if(index < 4) {
+                 if(index < 14) {
                      index = index + 1;
                      document.getElementById("quest").innerHTML = question[index];
                      remove = true;
@@ -157,12 +157,12 @@
                  offset = $(this).offset();
                  my = (e.pageY - offset.top);
                  mx = (e.pageX - offset.left);
-                 if (index<=4){
+                 if (index<=14){
                      if(myOne[index] <= my && my < myTwo[index] && mxOne[index] < mx && mx < mxTwo[index]) {
                          question[index] = "You already found this!";
                          index = index + 1;
                          document.getElementById("hint").src = "";
-                         if (index<=4){
+                         if (index<=14){
                              document.getElementById("quest").innerHTML = "Find the " + question[index];
                          }
                          use = 0;
