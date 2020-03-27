@@ -144,7 +144,7 @@
              });
 
              $('#right').click(function() {
-                 if(index < 14) {
+                 if(index < 9) {
                      index = index + 1;
                      document.getElementById("quest").innerHTML = question[index];
                      remove = true;
@@ -157,12 +157,12 @@
                  offset = $(this).offset();
                  my = (e.pageY - offset.top);
                  mx = (e.pageX - offset.left);
-                 if (index<=14){
+                 if (index<=9){
                      if(myOne[index] <= my && my < myTwo[index] && mxOne[index] < mx && mx < mxTwo[index]) {
                          question[index] = "You already found this!";
                          index = index + 1;
                          document.getElementById("hint").src = "";
-                         if (index<=14){
+                         if (index<=9){
                              document.getElementById("quest").innerHTML = "Find the " + question[index];
                          }
                          use = 0;
