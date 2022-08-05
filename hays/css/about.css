@@ -1,0 +1,29 @@
+.text {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+}
+
+.text p {
+    text-indent: 50px;
+}
+
+.content .cell {
+    margin: 10px;
+    background-color: #F8F0E3;
+}
+
+.content h1 {
+    font-family: 'Quintessential', cursive;
+    text-align: center;
+}
+
+.plaque {
+    background: url('../photos/plaque2-removebg-preview.png') no-repeat;
+    background-size: 100%;
+}
+
+#open {
+    width: 90%;
+    margin: auto;
+    display: block;
+}

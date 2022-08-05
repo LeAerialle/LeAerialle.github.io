@@ -1,0 +1,204 @@
+.content {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+/** Footer style **/
+.footer {
+    background-color: #000000;
+    color: white;
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    
+}
+
+
+.footer a {
+  color: white;
+}
+
+.footer ul {
+  list-style-type: none;
+}
+
+.footer .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Quintessential', cursive;
+}
+
+.contact {
+  padding: 10px;
+  width: 60%;
+  margin: auto;
+  font-size: 20px;
+}
+
+.footer img {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+
+.rounded-social-buttons {
+  text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
+}
+
+.rounded-social-buttons .social-button.facebook:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+  color: #3b5998;
+  background: #fefefe;
+  border-color: #3b5998;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:before {
+  font-family: "FontAwesome";
+  content: "";
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+  color: #125688;
+  background: #fefefe;
+  border-color: #125688;
+}
+
+
+
+  
+/**Navigation**/
+body {
+    padding-top: 330px;
+    background-color: #F8F0E3;
+    /**font-family: 'Edu QLD Beginner', cursive;**/
+    font-family: 'Quintessential', cursive;
+  }
+
+  #hero-image {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 3.75rem;
+  }
+  
+  .sticky-shrinknav-menu {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    bottom: 0;
+    height: 3.75rem;
+    line-height: 3.75rem;
+    width: 100%;
+    background-color: rgba(23, 121, 186, 0.1);
+    transition: all 0.5s ease;
+  }
+
+  .sticky-shrinknav-menu a {
+    width: 100%;
+  }
+  
+  .sticky-shrinknav-menu li {
+    border-radius: 2px;
+    height: 3.75rem;
+    line-height: 3.75rem;
+    width: 12%;
+    transition: all 0.3s ease;
+  }
+  
+  .sticky-shrinknav-menu li:hover {
+    background-color: #ff090969;
+  }
+  
+  .sticky-shrinknav-menu a {
+    margin: auto;
+    color: #F8F0E3;
+  }
+  
+  .sticky-shrinknav-header-title {
+    transition: all 0.3s ease;
+    position: relative;
+    -webkit-transform: translateY(-1.875rem);
+        -ms-transform: translateY(-1.875rem);
+            transform: translateY(-1.875rem);
+    margin-bottom: 0;
+    color: #fefefe;
+  }
+  
+  .sticky-shrinknav-header {
+    width: 100%;
+    height: 300px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: #000000;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  body.sticky-shrinknav-wrapper {
+    padding-top: 130px;
+  }
+  
+  body.sticky-shrinknav-wrapper .sticky-shrinknav-header {
+    height: 3.75rem;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  body.sticky-shrinknav-wrapper .sticky-shrinknav-header .sticky-shrinknav-header-title {
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    transition: all 0.3s ease;
+  }
+  
+  

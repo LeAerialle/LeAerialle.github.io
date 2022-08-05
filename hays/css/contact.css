@@ -1,0 +1,39 @@
+.content ul {
+    list-style-type: none;
+}
+
+.content h1 {
+    text-align: center;
+    font-family: 'Quintessential', cursive;
+}
+
+.content li {
+    padding: 5px;
+    font-size: 20px;
+}
+
+.content li a {
+    color: black;
+}
+
+::placeholder { 
+    color: #be1111;
+    opacity: 1; /* Firefox */
+  }
+
+#btn {
+    background-color: #be1111;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.information {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-right: 20px;
+    padding-bottom: 1px;
+}
