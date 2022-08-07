@@ -148,6 +148,10 @@ body {
   .sticky-shrinknav-menu li:hover {
     background-color: #ff090969;
   }
+
+  .active {
+    background-color: #ff090969;
+  }
   
   .sticky-shrinknav-menu a {
     margin: auto;
